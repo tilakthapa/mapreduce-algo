@@ -4,6 +4,8 @@ Calculating relative frequencies using
 2. Stripe Approach
 3. Hybrid Approach
 
+#### [Hadoop Installation & Configurations](hadoop-installation.md)
+
 #### Developed and tested with:
 1. Java 8, and
 2. Hadoop 2.7.0
@@ -32,7 +34,3 @@ MapReduce jobs' outputs will be available in ```output``` folder under project's
 6. Copies MapReduce outputs to local ```output``` folder.
 
 NOTE: it deletes ```input``` and ```output``` folders on every execution to avoid ...
-
-Others
-
-[Hadoop Installation & Configurations](hadoop-installation.md)
