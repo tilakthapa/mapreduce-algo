@@ -45,6 +45,7 @@ Hadoop can also be run on a single-node in a pseudo-distributed mode where each 
 3. Fully-Distributed Mode
 <p>
 The Hadoop daemons run on a cluster of machines.
+</p>
 
 >To run Hadoop in a particular mode, you need to do two things:
 1. set the appropriate properties, and
@@ -60,7 +61,7 @@ The Hadoop daemons run on a cluster of machines.
 |    YARN   | yarn.resourcemanager.hostname |         N/A        |     localhost     |  resourcemanager  |
 |    YARN   | yarn.nodemanager.aux-services |         N/A        | mapreduce_shuffle | mapreduce_shuffle |
 
->Configurations for Pseudo-distributed Mode:
+>####Configurations for Pseudo-distributed Mode:
 
 >etc/hadoop/core-site.xml
 ```
@@ -112,27 +113,37 @@ etc/hadoop/yarn-site.xml
 ```
 
 ###4. Configuring SSH
+
 >In pseudodistributed mode, we have to start daemons, and to do that using the supplied scripts we need to have SSH installed. Install it if not already installed:
-```
-sudo apt-get install ssh
+
+>```
+% sudo apt-get install ssh
 ```
 
 > On Mac OS X, make sure Remote Login (under System Preferences→Sharing) is enabled for the current user (or all users).
 
 >Then, to enable passwordless login, generate a new SSH key with an empty passphrase:
-```
+
+>```
 % ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 % cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
-Test that you can connect with:
+
+>Test that you can connect with:
+
+>```
+% ssh localhost
 ```
-% ssh localhost```
-If successful, you should not have to type in a password.
+
+>If successful, you should not have to type in a password.
 
 ### 5. Formatting the HDFS filesystem
+
 >Before HDFS can be used for the first time, the filesystem must be formatted. This is done by running the following command:
+
+>```
+% hdfs namenode -format
 ```
-% hdfs namenode -format```
 
 ### 6. Starting and stopping the daemons
 >To start the HDFS and YARN, type:
@@ -142,6 +153,7 @@ If successful, you should not have to type in a password.
 ```
 
 >Check if daemons are started successfully:
+
 >>http://localhost:50070/ for the namenode
 
 >>http://localhost:8088/ for the YARN resource manager
@@ -156,6 +168,7 @@ If successful, you should not have to type in a password.
 13499 SecondaryNameNode
 13741 Jps
 ```
+
 >To stop deamons, type:
 ```
 % stop-yarn.sh
@@ -163,21 +176,26 @@ If successful, you should not have to type in a password.
 ```
 
 ### 7. Creating a user directory
+
 >Create a home directory for yourself by running the following:
-```
+
+>```
 % hadoop fs -mkdir -p /user/$USER
 ```
 
 ### 8. Persisting NameNode metadata
+
 > Whenever you restart and execute ```start-dfs.sh``` NameNode is not up and you have to do ```hadoop namenode -format``` and then ```start-dfs.sh``` and ```start-mapred.sh``` which forces you to load the data every time. This happens because by default it points to /tmp directory which will be cleared when your machine restarts. Inorder to persist the metadata you have to change this from /tmp to another location in your home directory by overriding ```dfs.name.dir``` and ```dfs.data.dir``` in hdfs-site.xml file.
 
 >First create a directory, e.g
-```
-mkdir /home/<USER>/pseudo/
+
+>```
+% mkdir /home/<USER>/pseudo/
 ```
 
 >Then modify hdfs-site.xmls to point to this directory:
-```
+
+>```
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
@@ -196,4 +214,4 @@ mkdir /home/<USER>/pseudo/
 
 ### References
 1. http://zhongyaonan.com/hadoop-tutorial/setting-up-hadoop-2-6-on-mac-osx-yosemite.html
-2. Hadoop The Definitive Guide
+2. Hadoop The Definitive Guide - 4th Edition.
