@@ -2,7 +2,7 @@
 ### 1. Pre-requisites
 >Download and install Java from [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html). This project requires Java 8. Make sure that Java is installed and PATH variable is set properly.
 ```
-$ java -version
+% java -version
 java version "1.8.0_31"
 Java(TM) SE Runtime Environment (build 1.8.0_31-b13)
 Java HotSpot(TM) 64-Bit Server VM (build 25.31-b07, mixed mode)
@@ -14,7 +14,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.31-b07, mixed mode)
 ```
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home
 ```
-3. Set HADOOP_HOME environment variable to point your Hadoop installation directory:
+3.Set HADOOP_HOME environment variable to point your Hadoop installation directory:
 ```
 % export HADOOP_HOME=~/dev/hadoop-2.7.0
 % export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
@@ -22,18 +22,18 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home
 
 >Check that Hadoop runs:
 ```
-$ hadoop version
+% hadoop version
 Hadoop 2.7.0
 Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r d4c8d4d4d203c934e8074b31289a28724c0842cf
 Compiled by jenkins on 2015-04-10T18:40Z
 Compiled with protoc 2.5.0
 From source with checksum a9e90912c37a35c3195d23951fd18f
 This command was run using /Users/dinecha/dev/hadoop-2.7.0/share/hadoop/common/hadoop-common-2.7.0.jar
-$
 ```
 
 ### 3. Hadoop Configuraiton
 >Hadoop can be run in one of three modes:
+
 1. Local (Standalone) Mode
 <p>
 By default, Hadoop is configured to run in a non-distributed mode, as a single Java process. There are no daemons running and everything runs in a single JVM. Standalone mode is suitable for running MapReduce programs during development, since it is easy to test and debug them.
