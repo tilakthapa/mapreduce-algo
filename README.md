@@ -35,4 +35,4 @@ NOTE: it deletes ```input``` and ```output``` folders on every execution to avoi
 
 Others
 
-[Hadoop Installation & Configurations](hadoop-installation.md)
+[Hadoop Installation & Configurations](./docs/hadoop-installation.md)
