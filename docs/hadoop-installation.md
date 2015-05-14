@@ -193,3 +193,7 @@ mkdir /home/<USER>/pseudo/
 ```
 
 >Now format your noamenode one lasttime and  restart your deamons. You don't have to do the formatting everytime you restart your machine.
+
+### References
+1. http://zhongyaonan.com/hadoop-tutorial/setting-up-hadoop-2-6-on-mac-osx-yosemite.html
+2. Hadoop The Definitive Guide
