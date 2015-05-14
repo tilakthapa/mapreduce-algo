@@ -1,4 +1,4 @@
-package cs522.lab.stripes;
+package cs522.lab.stripe;
 
 import cs522.lab.common.Utils;
 import org.apache.hadoop.io.MapWritable;

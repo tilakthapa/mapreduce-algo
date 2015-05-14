@@ -1,7 +1,6 @@
-package cs522.lab.pairs;
+package cs522.lab.pair;
 
 import cs522.lab.common.Pair;
-import cs522.lab.common.Utils;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -16,7 +15,7 @@ import static cs522.lab.common.Utils.getNeighbors;
 /**
  * Created by tilak on 5/11/15.
  * <p/>
- * in-mapper combiner algorithm to compute relative frequencies (pairs approach)
+ * in-mapper combiner algorithm to compute relative frequencies (pair approach)
  */
 public class RF_PairsMapper extends Mapper<Object, Text, Pair, IntWritable> {
 

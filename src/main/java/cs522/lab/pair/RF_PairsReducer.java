@@ -1,6 +1,5 @@
-package cs522.lab.pairs;
+package cs522.lab.pair;
 
-import cs522.lab.common.Utils;
 import cs522.lab.common.Pair;
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.IntWritable;

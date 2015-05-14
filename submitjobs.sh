@@ -6,6 +6,7 @@ OUTPUT_DIR="output"
 PAIRS_OUTPUT_DIR="$OUTPUT_DIR/pairs_rf"
 STRIPES_OUTPUT_DIR="$OUTPUT_DIR/stripes_rf"
 HYBRID_OUTPUT_DIR="$OUTPUT_DIR/hybrid_rf"
+JAR_PATH="target/bigdata-lab-1.0-SNAPSHOT.jar"
 
 echo 'Deleting HDFS input folder ...'
 hadoop fs -rm -r -skipTrash $INPUT_DIR
@@ -20,11 +21,11 @@ echo 'Deleting HDFS output directory ...'
 hadoop fs -rm -r -skipTrash $OUTPUT_DIR
 
 echo 'Submitting RF_PairsJob ...'
-hadoop jar target/bigdata-lab-1.0-SNAPSHOT.jar cs522.lab.pairs.RF_PairsJob $INPUT_DIR $PAIRS_OUTPUT_DIR
+hadoop jar $JAR_PATH cs522.lab.pair.RF_PairsJob $INPUT_DIR $PAIRS_OUTPUT_DIR
 echo 'Submitting RF_StripesJob ...'
-hadoop jar target/bigdata-lab-1.0-SNAPSHOT.jar cs522.lab.stripes.RF_StripesJob $INPUT_DIR $STRIPES_OUTPUT_DIR
+hadoop jar $JAR_PATH cs522.lab.stripe.RF_StripesJob $INPUT_DIR $STRIPES_OUTPUT_DIR
 echo 'Submitting RF_HybridJob ...'
-hadoop jar target/bigdata-lab-1.0-SNAPSHOT.jar cs522.lab.hybrid.RF_HybridJob $INPUT_DIR $HYBRID_OUTPUT_DIR
+hadoop jar $JAR_PATH cs522.lab.hybrid.RF_HybridJob $INPUT_DIR $HYBRID_OUTPUT_DIR
 
 # copy output to local
 LOCAL_OUTPUT_DIR=output
