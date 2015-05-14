@@ -1,10 +1,11 @@
 # MapReduce Algorithms
 Calculating relative frequencies using
+
 1. Pair Approach
 2. Stripe Approach
 3. Hybrid Approach
 
-#### [Hadoop Installation & Configurations](hadoop-installation.md)
+#### [Hadoop Installation & Configurations](./docs/hadoop-installation.md)
 
 #### Developed and tested with:
 1. Java 8, and
@@ -22,7 +23,7 @@ This will generate jar file under ```target``` folder.
 3. Run the script available in project's root folder.
 ```
 % ./submitjobs.sh
-``` 
+```
 MapReduce jobs' outputs will be available in ```output``` folder under project's root folder.
 
 #### What dos ```submitjobs.sh``` does?
