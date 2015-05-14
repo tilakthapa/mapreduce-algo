@@ -16,10 +16,11 @@ Calculating relative frequencies using
 mvn clean package
 ```
 This will generate jar file under ```target``` folder.
+
 3. Run the script available in project's root folder.
 ```
 % ./submitjobs.sh
-```
+``` 
 MapReduce jobs' outputs will be available in ```output``` folder under project's root folder.
 
 #### What dos ```submitjobs.sh``` does?
