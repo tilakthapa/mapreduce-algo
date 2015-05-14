@@ -14,7 +14,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.31-b07, mixed mode)
 ```
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home
 ```
-3.Set HADOOP_HOME environment variable to point your Hadoop installation directory:
+3. Set HADOOP_HOME environment variable to point your Hadoop installation directory:
 ```
 % export HADOOP_HOME=~/dev/hadoop-2.7.0
 % export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
@@ -34,7 +34,7 @@ This command was run using /Users/dinecha/dev/hadoop-2.7.0/share/hadoop/common/h
 ### 3. Hadoop Configuraiton
 >Hadoop can be run in one of three modes:
 
-1. Local (Standalone) Mode
+>1. Local (Standalone) Mode
 <p>
 By default, Hadoop is configured to run in a non-distributed mode, as a single Java process. There are no daemons running and everything runs in a single JVM. Standalone mode is suitable for running MapReduce programs during development, since it is easy to test and debug them.
 </p>
