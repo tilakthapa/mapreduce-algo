@@ -5,7 +5,7 @@ Calculating relative frequencies using
     * [Mapper](./src/main/java/cs522/lab/pair/RF_PairsMapper.java)
     * [Reducer](./src/main/java/cs522/lab/pair/RF_PairsReducer.java)
 2. Stripe Approach
-    * [Mapper](./src/main/java/cs522/lab/stripe/RF_StripesMapper.java)
+    * [Mapper](./src/main/java/cs522/lab/stripe/StripesMapper.java)
     * [Reducer](./src/main/java/cs522/lab/stripe/RF_StripesReducer.java)
 3. Hybrid Approach
     * [Mapper](./src/main/java/cs522/lab/hybrid/RF_HybridMapper.java)
