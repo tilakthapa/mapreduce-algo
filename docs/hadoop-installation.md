@@ -48,14 +48,14 @@ Key Configuration properties for different modes
 
 | Component |           Properties          |     Standalone     | Pseudo-distributed |    Distributed    |
 |:---------:|:-----------------------------:|:------------------:|:-----------------:|:-----------------:|
-|   common  |          fs.defaultFS (core-site.xml)         | file:/// (default) | hdfs://localhost/ |  hdfs://namenode/ |
+|   common  |          fs.defaultFS         | file:/// (default) | hdfs://localhost/ |  hdfs://namenode/ |
 |    HDFS   |        dfs.replication        |         N/A        |         1         |    3 (default)    |
 | MapReduce |    mapreduce.framework.name   |   local (default)  |        yarn       |        yarn       |
 |    YARN   | yarn.resourcemanager.hostname |         N/A        |     localhost     |  resourcemanager  |
 |    YARN   | yarn.nodemanager.aux-services |         N/A        | mapreduce_shuffle | mapreduce_shuffle |
 
 ### 4. Configurations for Pseudo-distributed Mode:
-etc/hadoop/core-site.xml
+__HADOOP_HOME/etc/hadoop/core-site.xml__
 ```
 <?xml version="1.0"?>
 <!-- core-site.xml -->
@@ -66,7 +66,7 @@ etc/hadoop/core-site.xml
   </property>
 </configuration>
 ```
-etc/hadoop/hdfs-site.xml
+__HADOOP_HOME/etc/hadoop/hdfs-site.xml__
 ```
 <?xml version="1.0"?>
 <!-- hdfs-site.xml -->
@@ -77,7 +77,7 @@ etc/hadoop/hdfs-site.xml
   </property>
 </configuration>
 ```
-etc/hadoop/mapred-site.xml
+__HADOOP_HOME/etc/hadoop/mapred-site.xml__
 ```
  <?xml version="1.0"?>
 <!-- mapred-site.xml -->
@@ -88,7 +88,7 @@ etc/hadoop/mapred-site.xml
   </property>
 </configuration>
 ```
-etc/hadoop/yarn-site.xml
+__HADOOP_HOME/etc/hadoop/yarn-site.xml__
 ```
 <?xml version="1.0"?>
 <!-- yarn-site.xml -->
@@ -137,11 +137,11 @@ To start the HDFS and YARN, type:
 ```
 Check if daemons are started successfully:
 
->http://localhost:50070/ for the namenode
+>Open [http://localhost:50070/](http://localhost:50070/) for the namenode
 
->http://localhost:8088/ for the YARN resource manager
+>Open [http://localhost:8088/](http://localhost:8088/) for the YARN resource manager
 
-Or You can also use Java’s jps command to see whether the processes are running.
+Or You can also use Java’s ```jps``` command to see whether the processes are running.
 ```
 % jps
 13619 ResourceManager
@@ -172,6 +172,8 @@ First create a directory, e.g
 % mkdir /home/<USER>/pseudo/
 ```
 Then modify hdfs-site.xmls to point to this directory:
+
+__HADOOP_HOME/etc/hadoop/hdfs-site.xml__
 ```
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
