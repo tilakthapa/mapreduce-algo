@@ -11,6 +11,6 @@ public class PairPartitioner extends Partitioner<Pair, IntWritable> {
 
     @Override
     public int getPartition(Pair pair, IntWritable intWritable, int numOfPartitions) {
-        return pair.getFirst().hashCode() % numOfPartitions;
+        return Math.abs(pair.getFirst().hashCode() % numOfPartitions);
     }
 }

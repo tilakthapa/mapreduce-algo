@@ -5,7 +5,7 @@ import org.apache.hadoop.io.MapWritable;
 import java.util.Map;
 
 /**
- * Created by dinecha on 5/13/15.
+ * Created by tilak on 5/13/15.
  */
 public class MyMapWritable extends MapWritable {
     @Override

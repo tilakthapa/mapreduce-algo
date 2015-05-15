@@ -35,6 +35,8 @@ public class RF_PairsJob {
         job.setOutputKeyClass(Pair.class);
         job.setOutputValueClass(IntWritable.class);
 
+        job.setNumReduceTasks(3);
+
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 

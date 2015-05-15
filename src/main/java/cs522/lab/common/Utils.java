@@ -1,6 +1,5 @@
 package cs522.lab.common;
 
-import cs522.lab.common.MyMapWritable;
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.MapWritable;
@@ -11,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by dinecha on 5/12/15.
+ * Created by tilak on 5/12/15.
  */
 public class Utils {
     public static MapWritable toMapWritable(Map<String, Integer> map) {

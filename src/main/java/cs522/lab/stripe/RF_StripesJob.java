@@ -11,7 +11,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 /**
- * Created by dinecha on 5/13/15.
+ * Created by tilak on 5/13/15.
  */
 public class RF_StripesJob {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
@@ -28,6 +28,8 @@ public class RF_StripesJob {
 
         job.setMapperClass(StripesMapper.class);
         job.setReducerClass(RF_StripesReducer.class);
+
+        job.setNumReduceTasks(3);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(MapWritable.class);

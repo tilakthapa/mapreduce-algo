@@ -35,6 +35,8 @@ public class RF_HybridJob {
 
         job.setPartitionerClass(PairPartitioner.class);
 
+        job.setNumReduceTasks(3);
+
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
