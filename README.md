@@ -45,8 +45,8 @@ MapReduce jobs' outputs will be available in ```output``` folder under project's
     - [events03.txt](./input/events03.txt)
 - One job per approach
     - [```RF_PairsJob```](./src/main/java/cs522/lab/pair/RF_PairsJob.java)
-    - [```RF_StripesJob```](mapreduce-algo/src/main/java/cs522/lab/stripe/RF_StripesJob.java)
-    - [```RF_HybridJob```](mapreduce-algo/src/main/java/cs522/lab/hybrid/RF_HybridJob.java)
+    - [```RF_StripesJob```](./src/main/java/cs522/lab/stripe/RF_StripesJob.java)
+    - [```RF_HybridJob```](./src/main/java/cs522/lab/hybrid/RF_HybridJob.java)
 - Each job is configured to have 3 reducers.
 - Outputs of a demo run on pseudo-distributed mode
     - [Pairs approach output](./output/pairs_rf/)
