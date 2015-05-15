@@ -18,8 +18,8 @@ Calculating relative frequencies using
 2. Hadoop 2.7.0
 
 #### Executing Jobs:
-1. Install maven if you haven't already.
-2. Checkout the project.
+1. Install and configure - Java 8, Hadoop 2.7.0 & Maven.
+2. Clone this project repo. It's a maven project.
 3. Create jar file by executing:
 ```
 % mvn clean package
