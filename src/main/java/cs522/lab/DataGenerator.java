@@ -9,7 +9,7 @@ import java.nio.file.Paths;
  */
 public class DataGenerator {
 
-    private static final int ROWS = 100;
+    private static final int ROWS = 10;
 
     public static void main(String[] args) throws IOException {
         generateRandomDataFile("./input/events01.txt");

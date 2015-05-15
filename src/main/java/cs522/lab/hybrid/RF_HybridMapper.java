@@ -1,7 +1,6 @@
 package cs522.lab.hybrid;
 
 import cs522.lab.common.Pair;
-import cs522.lab.common.Utils;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -26,25 +25,6 @@ public class RF_HybridMapper extends Mapper<Object, Text, Pair, IntWritable> {
 
     @Override
     protected void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-/*
-        // split into terms
-        String[] terms = value.toString().split("\\s+");
-
-        for (int idx = 0; idx < terms.length; idx++) {
-
-            // get neighbors
-            List<String> neighbors = Utils.getNeighbors(idx, terms);
-
-            // keys
-            String term = terms[idx];
-
-            // update counts for each neighbor
-            neighbors.forEach(n -> {
-                Pair pair = new Pair(term, n);
-                cache.compute(pair, (k, v) -> v == null ? 1 : v + 1);
-            });
-        }
-*/
         // split into terms
         String[] terms = value.toString().split("\\s+");
 
@@ -55,13 +35,11 @@ public class RF_HybridMapper extends Mapper<Object, Text, Pair, IntWritable> {
 
             // keys
             String term = terms[idx];
-//            Pair special = new Pair(term, "*");
 
             // update counts for each neighbor
             neighbors.forEach(n -> {
                 Pair pair = new Pair(term, n);
                 cache.compute(pair, (k, v) -> v == null ? 1 : v + 1);
-//                cache.compute(special, (k, v) -> v == null ? 1 : v + 1);
             });
         }
     }
