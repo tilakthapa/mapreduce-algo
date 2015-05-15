@@ -38,7 +38,7 @@ This will generate jar file under ```target``` folder.
 ```
 MapReduce jobs' outputs will be available in ```output``` folder under project's root folder.
 
-#### What dos [```submitjobs.sh```](submitjobs.sh) does?
+#### What does [```submitjobs.sh```](submitjobs.sh) do?
 1. It moves sample input data available in [```input```](./input) folder to HDFS. Before that it deletes and creates HDFS ```input``` folder.
 2. Deletes HDFS ```output``` folder.
 3. Deletes ```input``` and ```output``` folder in HDFS
