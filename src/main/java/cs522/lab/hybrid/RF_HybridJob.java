@@ -1,12 +1,10 @@
 package cs522.lab.hybrid;
 
-import cs522.lab.common.MyMapWritable;
 import cs522.lab.common.Pair;
 import cs522.lab.common.PairPartitioner;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -25,19 +23,17 @@ public class RF_HybridJob {
 
         Configuration conf = new Configuration();
 
-        Job job = Job.getInstance(conf, "Hybrid Approach");
+        Job job = Job.getInstance(conf, "RF Hybrid Approach");
 
         job.setJarByClass(RF_HybridJob.class);
 
         job.setMapperClass(RF_HybridMapper.class);
+        job.setReducerClass(RF_HybridReducer.class);
+
         job.setOutputKeyClass(Pair.class);
         job.setOutputValueClass(IntWritable.class);
 
-        job.setReducerClass(RF_HybridReducer.class);
-
         job.setPartitionerClass(PairPartitioner.class);
-
-
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));

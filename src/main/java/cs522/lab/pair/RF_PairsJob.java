@@ -23,7 +23,7 @@ public class RF_PairsJob {
 
         Configuration conf = new Configuration();
 
-        Job job = Job.getInstance(conf, "Pairs Approach");
+        Job job = Job.getInstance(conf, "RF Pairs Approach");
 
         job.setJarByClass(RF_PairsJob.class);
 

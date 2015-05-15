@@ -51,11 +51,11 @@ public class Pair implements Serializable, WritableComparable<Pair> {
 
     @Override
     public int compareTo(Pair o) {
-        Pair other = (Pair) o;
-        if (!this.first.equals(other.first)) {
-            return this.first.compareTo(other.first);
+        Pair another = (Pair) o;
+        if (!this.first.equals(another.first)) {
+            return this.first.compareTo(another.first);
         } else {
-            return this.second.compareTo(other.second);
+            return this.second.compareTo(another.second);
         }
     }
 
