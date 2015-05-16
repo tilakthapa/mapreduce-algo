@@ -1,4 +1,5 @@
 # MapReduce Algorithms
+
 Calculating relative frequencies using:
 1. Pair Approach
     * [```RF_PairsMapper```](./src/main/java/cs522/lab/pair/RF_PairsMapper.java)
