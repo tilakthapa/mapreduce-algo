@@ -1,4 +1,4 @@
-package cs522.lab.hybrid;
+package cs522.lab.pair;
 
 import cs522.lab.common.Pair;
 import cs522.lab.common.PairPartitioner;
@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * Created by tilak on 5/11/15.
  */
-public class RF_HybridJob {
+public class RF_PairsDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         if (args.length != 2) {
             System.out.println("Arguments missing.");
@@ -23,17 +23,17 @@ public class RF_HybridJob {
 
         Configuration conf = new Configuration();
 
-        Job job = Job.getInstance(conf, "RF Hybrid Approach");
+        Job job = Job.getInstance(conf, "RF Pairs Approach");
 
-        job.setJarByClass(RF_HybridJob.class);
+        job.setJarByClass(RF_PairsDriver.class);
 
-        job.setMapperClass(RF_HybridMapper.class);
-        job.setReducerClass(RF_HybridReducer.class);
+        job.setMapperClass(RF_PairsMapper.class);
+        job.setReducerClass(RF_PairsReducer.class);
+
+        job.setPartitionerClass(PairPartitioner.class);
 
         job.setOutputKeyClass(Pair.class);
         job.setOutputValueClass(IntWritable.class);
-
-        job.setPartitionerClass(PairPartitioner.class);
 
         job.setNumReduceTasks(3);
 

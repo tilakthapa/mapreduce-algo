@@ -1,6 +1,5 @@
 package cs522.lab.stripe;
 
-import cs522.lab.common.Utils;
 import org.apache.hadoop.io.MapWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -10,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static cs522.lab.common.Utils.getNeighbors;
 import static cs522.lab.common.Utils.toMapWritable;
 
 /**
@@ -27,7 +27,7 @@ public class StripesMapper extends Mapper<Object, Text, Text, MapWritable> {
             String term = terms[idx];
 
             // get neighbors
-            List<String> neighbors = Utils.getNeighbors(idx, terms);
+            List<String> neighbors = getNeighbors(idx, terms);
 
             // compute count
             Map<String, Integer> map = new HashMap<>();

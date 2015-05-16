@@ -21,11 +21,11 @@ echo 'Deleting HDFS output directory ...'
 hadoop fs -rm -r -skipTrash $OUTPUT_DIR
 
 echo 'Submitting RF_PairsJob ...'
-hadoop jar $JAR_PATH cs522.lab.pair.RF_PairsJob $INPUT_DIR $PAIRS_OUTPUT_DIR
+hadoop jar $JAR_PATH cs522.lab.pair.RF_PairsDriver $INPUT_DIR $PAIRS_OUTPUT_DIR
 echo 'Submitting RF_StripesJob ...'
-hadoop jar $JAR_PATH cs522.lab.stripe.RF_StripesJob $INPUT_DIR $STRIPES_OUTPUT_DIR
+hadoop jar $JAR_PATH cs522.lab.stripe.RF_StripesDriver $INPUT_DIR $STRIPES_OUTPUT_DIR
 echo 'Submitting RF_HybridJob ...'
-hadoop jar $JAR_PATH cs522.lab.hybrid.RF_HybridJob $INPUT_DIR $HYBRID_OUTPUT_DIR
+hadoop jar $JAR_PATH cs522.lab.hybrid.RF_HybridDriver $INPUT_DIR $HYBRID_OUTPUT_DIR
 
 # copy output to local
 LOCAL_OUTPUT_DIR=output

@@ -14,7 +14,7 @@ import static cs522.lab.common.Utils.getNeighbors;
 
 /**
  * Created by tilak on 5/11/15.
- * <p/>
+ * <p>
  * in-mapper combiner algorithm to compute relative frequencies (pair approach)
  */
 public class RF_PairsMapper extends Mapper<Object, Text, Pair, IntWritable> {
@@ -52,8 +52,22 @@ public class RF_PairsMapper extends Mapper<Object, Text, Pair, IntWritable> {
 
     @Override
     protected void cleanup(Context context) throws IOException, InterruptedException {
-        for (Pair pair : cache.keySet()) {
-            context.write(pair, new IntWritable(cache.get(pair)));
+//        for (Pair pair : cache.keySet()) {
+//            context.write(pair, new IntWritable(cache.get(pair)));
+//        }
+
+        cache.entrySet()
+                .stream()
+                .forEach(entry -> emit(entry, context));
+    }
+
+    private static void emit(Map.Entry<Pair, Integer> entry, Context context) {
+        try {
+            context.write(entry.getKey(), new IntWritable(entry.getValue()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }

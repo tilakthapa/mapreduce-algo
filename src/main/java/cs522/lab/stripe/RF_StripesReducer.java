@@ -41,9 +41,10 @@ public class RF_StripesReducer extends Reducer<Text, MapWritable, Text, Text> {
 
         // relative frequencies
         for (String kk : cache.keySet()) {
-            cache.put(kk, Utils.round(cache.get(kk) / marginal));
+            double rf = cache.get(kk) / marginal;
+            cache.put(kk, Utils.round(rf));
         }
-        
+
         context.write(key, new Text(cache.toString()));
     }
 }

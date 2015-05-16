@@ -1,9 +1,10 @@
-package cs522.lab.stripe;
+package cs522.lab.hybrid;
 
+import cs522.lab.common.Pair;
+import cs522.lab.common.PairPartitioner;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.MapWritable;
-import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -11,9 +12,9 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 /**
- * Created by tilak on 5/13/15.
+ * Created by tilak on 5/11/15.
  */
-public class RF_StripesJob {
+public class RF_HybridDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         if (args.length != 2) {
             System.out.println("Arguments missing.");
@@ -22,17 +23,19 @@ public class RF_StripesJob {
 
         Configuration conf = new Configuration();
 
-        Job job = Job.getInstance(conf, "RF Stripes Approach");
+        Job job = Job.getInstance(conf, "RF Hybrid Approach");
 
-        job.setJarByClass(RF_StripesJob.class);
+        job.setJarByClass(RF_HybridDriver.class);
 
-        job.setMapperClass(StripesMapper.class);
-        job.setReducerClass(RF_StripesReducer.class);
+        job.setMapperClass(RF_HybridMapper.class);
+        job.setReducerClass(RF_HybridReducer.class);
+
+        job.setOutputKeyClass(Pair.class);
+        job.setOutputValueClass(IntWritable.class);
+
+        job.setPartitionerClass(PairPartitioner.class);
 
         job.setNumReduceTasks(3);
-
-        job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(MapWritable.class);
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
