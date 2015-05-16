@@ -12,9 +12,9 @@ Calculating relative frequencies using:
     * [```RF_HybridMapper```](./src/main/java/cs522/lab/hybrid/RF_HybridMapper.java)
     * [```RF_HybridReducer```](./src/main/java/cs522/lab/hybrid/RF_HybridReducer.java)
 4. Driver Programs
-    * [```RF_PairsJob```](./src/main/java/cs522/lab/pair/RF_PairsJob.java)
-    * [```RF_StripesJob```](./src/main/java/cs522/lab/stripe/RF_StripesJob.java)
-    * [```RF_HybridJob```](./src/main/java/cs522/lab/hybrid/RF_HybridJob.java)
+    * [```RF_PairsJob```](./src/main/java/cs522/lab/pair/RF_PairsDriver.java)
+    * [```RF_StripesJob```](./src/main/java/cs522/lab/stripe/RF_StripesDriver.java)
+    * [```RF_HybridJob```](./src/main/java/cs522/lab/hybrid/RF_HybridDriver.java)
 
 #### [Hadoop Installation & Configurations](./docs/hadoop-installation.md)
 
