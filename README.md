@@ -1,6 +1,7 @@
 # MapReduce Algorithms
 
 Calculating relative frequencies using:
+
 1. Pair Approach
     * [```RF_PairsMapper```](./src/main/java/cs522/lab/pair/RF_PairsMapper.java)
     * [```RF_PairsReducer```](./src/main/java/cs522/lab/pair/RF_PairsReducer.java)
@@ -11,11 +12,12 @@ Calculating relative frequencies using:
     * [```RF_HybridMapper```](./src/main/java/cs522/lab/hybrid/RF_HybridMapper.java)
     * [```RF_HybridReducer```](./src/main/java/cs522/lab/hybrid/RF_HybridReducer.java)
 4. Driver Programs
-    - [```RF_PairsJob```](./src/main/java/cs522/lab/pair/RF_PairsJob.java)
-    - [```RF_StripesJob```](./src/main/java/cs522/lab/stripe/RF_StripesJob.java)
-    - [```RF_HybridJob```](./src/main/java/cs522/lab/hybrid/RF_HybridJob.java)
+    * [```RF_PairsJob```](./src/main/java/cs522/lab/pair/RF_PairsJob.java)
+    * [```RF_StripesJob```](./src/main/java/cs522/lab/stripe/RF_StripesJob.java)
+    * [```RF_HybridJob```](./src/main/java/cs522/lab/hybrid/RF_HybridJob.java)
 
 #### [Hadoop Installation & Configurations](./docs/hadoop-installation.md)
+
 #### Developed and tested with:
 1. Java 8, and
 2. Hadoop 2.7.0
