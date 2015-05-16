@@ -1,18 +1,20 @@
 # MapReduce Algorithms
 Calculating relative frequencies using:
-
 1. Pair Approach
-    * [Mapper](./src/main/java/cs522/lab/pair/RF_PairsMapper.java)
-    * [Reducer](./src/main/java/cs522/lab/pair/RF_PairsReducer.java)
+    * [```RF_PairsMapper```](./src/main/java/cs522/lab/pair/RF_PairsMapper.java)
+    * [```RF_PairsReducer```](./src/main/java/cs522/lab/pair/RF_PairsReducer.java)
 2. Stripe Approach
-    * [Mapper](./src/main/java/cs522/lab/stripe/StripesMapper.java)
-    * [Reducer](./src/main/java/cs522/lab/stripe/RF_StripesReducer.java)
+    * [```StripesMapper```](./src/main/java/cs522/lab/stripe/StripesMapper.java)
+    * [```RF_StripesReducer```](./src/main/java/cs522/lab/stripe/RF_StripesReducer.java)
 3. Hybrid Approach
-    * [Mapper](./src/main/java/cs522/lab/hybrid/RF_HybridMapper.java)
-    * [Reducer](./src/main/java/cs522/lab/hybrid/RF_HybridReducer.java)
+    * [```RF_HybridMapper```](./src/main/java/cs522/lab/hybrid/RF_HybridMapper.java)
+    * [```RF_HybridReducer```](./src/main/java/cs522/lab/hybrid/RF_HybridReducer.java)
+4. Driver Programs
+    - [```RF_PairsJob```](./src/main/java/cs522/lab/pair/RF_PairsJob.java)
+    - [```RF_StripesJob```](./src/main/java/cs522/lab/stripe/RF_StripesJob.java)
+    - [```RF_HybridJob```](./src/main/java/cs522/lab/hybrid/RF_HybridJob.java)
 
 #### [Hadoop Installation & Configurations](./docs/hadoop-installation.md)
-
 #### Developed and tested with:
 1. Java 8, and
 2. Hadoop 2.7.0
@@ -44,9 +46,6 @@ MapReduce jobs' outputs will be available in ```output``` folder under project's
     - [events02.txt](./input/events02.txt)
     - [events03.txt](./input/events03.txt)
 - One job per approach
-    - [```RF_PairsJob```](./src/main/java/cs522/lab/pair/RF_PairsJob.java)
-    - [```RF_StripesJob```](./src/main/java/cs522/lab/stripe/RF_StripesJob.java)
-    - [```RF_HybridJob```](./src/main/java/cs522/lab/hybrid/RF_HybridJob.java)
 - Each job is configured to have 3 reducers.
 - Outputs of a demo run on pseudo-distributed mode
     - [Pairs approach output](./output/pairs_rf/)
