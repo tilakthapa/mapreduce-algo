@@ -46,10 +46,6 @@ public class RF_HybridMapper extends Mapper<Object, Text, Pair, IntWritable> {
 
     @Override
     protected void cleanup(Context context) throws IOException, InterruptedException {
-//        for (Pair pair : cache.keySet()) {
-//            context.write(pair, new IntWritable(cache.get(pair)));
-//        }
-
         cache.entrySet()
                 .stream()
                 .forEach(entry -> emit(entry, context));

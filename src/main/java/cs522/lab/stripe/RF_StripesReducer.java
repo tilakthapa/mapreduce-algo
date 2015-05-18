@@ -1,6 +1,5 @@
 package cs522.lab.stripe;
 
-import cs522.lab.common.Utils;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.MapWritable;
 import org.apache.hadoop.io.Text;
@@ -11,6 +10,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+
+import static cs522.lab.common.Utils.round;
 
 /**
  * Created by tilak on 5/11/15.
@@ -42,7 +43,7 @@ public class RF_StripesReducer extends Reducer<Text, MapWritable, Text, Text> {
         // relative frequencies
         for (String kk : cache.keySet()) {
             double rf = cache.get(kk) / marginal;
-            cache.put(kk, Utils.round(rf));
+            cache.put(kk, round(rf));
         }
 
         context.write(key, new Text(cache.toString()));
